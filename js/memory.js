@@ -42,11 +42,11 @@ var memory = function(input1, input2) {
   return matchCount;
 }
 
-var counter = function(clickCounter){
-  this.clickCounter = 0;
-}
+
 
 $(document).ready(function(){
+  var counter = 0;
+  var flipBack = [];
   $(".question").click(function(){
     event.preventDefault();
     $(this).toggleClass("question");
@@ -55,23 +55,36 @@ $(document).ready(function(){
     var idNumber = $(this).attr('id');
     if (counter === 0) {
       input1 = idNumber;
+      flipBack.push(input1);
       counter += 1;
     } else if (counter === 1) {
       input2 = idNumber;
+      flipBack.push(input2);
       counter +=1;
     } else {
       counter = 0;
-
+      console.log("in else" + counter)
+      console.log(flipBack);
+      for (var i = 0; i < flipBack.length; i++) {
+        var elementId = document.getElementById(flipBack[i])
+          $(elementId).toggleClass("question");
+          console.log(elementId);
+      }
+      flipBack = [];
     }
 
-      var matchCount = memory(input1, input2);
 
-      if (matchCount === 8) {
-        var win = "you win!"
-      } else if (matchCount === -5) {
-        var lose = "you lose"
-    }
-    console.log(counter);
+      // console.log(idNumber);
+
+
+    //   var matchCount = memory(input1, input2);
+    //
+    //   if (matchCount === 8) {
+    //     var win = "you win!"
+    //   } else if (matchCount === -5) {
+    //     var lose = "you lose"
+    // }
+    //
 
   });
 });
