@@ -1,0 +1,33 @@
+img {
+  max-width: 100px;
+  max-height: 50%;
+}
+
+#expand1{
+    content:url(../img/rick1.jpg);
+}
+#expand2{
+    content:url(../img/rick2.jpg);
+}
+#expand3{
+    content:url(../img/rick3.jpg);
+}
+#expand4{
+    content:url(../img/rick4.jpg);
+}
+#expand5{
+    content:url(../img/morty1.jpg);
+}
+#expand6{
+    content:url(../img/morty2.jpg);
+}
+#expand7{
+    content:url(../img/morty3.jpg);
+}
+#expand8{
+    content:url(../img/morty4.jpg);
+}
+
+.question{
+    content:url(../img/questionmark.jpg);
+}
