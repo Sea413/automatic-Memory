@@ -1,15 +1,4 @@
-// exports.memory = function(click) {
-//   var inputArray = [];
-//   var rickArray =[rick1,rick2];
-//   var mortyArray = [morty1,morty2];
-//
-//   input = input.split(" ");
-//   var inputLength = input.length;
-//   return inputLength;
-// };
-//
-
-var memory = function(input1, input2) {
+exports.memory = function(input1, input2) {
   var matchCount =0;
   if ((input1 === 1 && input2 === 2) || (input1 === 2 && input2 === 1)) {
     matchCount +=1;
@@ -38,71 +27,5 @@ var memory = function(input1, input2) {
   // else {
   //   matchCount -=1;
   // }
-  console.log(matchCount);
   return matchCount;
-}
-
-
-
-$(document).ready(function(){
-  var counter = 0;
-  var flipBack = [];
-  var matchCount = 0;
-  var pointCount = [];
-  $(".question").click(function(){
-    event.preventDefault();
-    $(this).toggleClass("question");
-    var input1;
-    var input2;
-    var input3;
-    var idNumber = $(this).attr('id');
-    if (counter === 0) {
-      input1 = idNumber;
-      flipBack.push(input1);
-      counter += 1;
-    } else if (counter === 1) {
-      input2 = idNumber;
-      flipBack.push(input2);
-      counter +=1;
-      var matchCount = memory(parseInt(flipBack[0]), parseInt(flipBack[1]));
-      if (matchCount === 1) {
-        pointCount.push(matchCount)
-      }
-      console.log(matchCount);
-      // console.log(flipBack[0], flipBack[1]);
-    } else {
-      counter = 0;
-      input3 = idNumber;
-      flipBack.push(input3)
-      // console.log("in else" + counter)
-      // console.log(flipBack);
-      for (var i = 0; i < flipBack.length; i++) {
-        var elementId = document.getElementById(flipBack[i])
-          $(elementId).toggleClass("question");
-      }
-
-      flipBack = [];
-      var totalPoints = pointCount.length;
-      console.log(totalPoints);
-
-      if (totalPoints === 8){
-        $("#winner").append("You're a winner"); //append
-      }
-    }
-
-
-
-      // console.log(idNumber);
-
-
-    //   var matchCount = memory(input1, input2);
-    //
-    //   if (matchCount === 8) {
-    //     var win = "you win!"
-    //   } else if (matchCount === -5) {
-    //     var lose = "you lose"
-    // }
-    //
-
-  });
-});
+};

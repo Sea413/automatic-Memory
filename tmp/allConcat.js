@@ -22,14 +22,14 @@ $(document).ready(function(){
       counter +=1;
       var matchCount = memory(parseInt(flipBack[0]), parseInt(flipBack[1]));
       if (matchCount === 1) {
-        pointCount.push(matchCount);
+        pointCount.push(matchCount)
       }
     } else {
       counter = 0;
       input3 = idNumber;
-      flipBack.push(input3);
+      flipBack.push(input3)
       for (var i = 0; i < flipBack.length; i++) {
-        var elementId = document.getElementById(flipBack[i]);
+        var elementId = document.getElementById(flipBack[i])
           $(elementId).toggleClass("question");
       }
       flipBack = [];
